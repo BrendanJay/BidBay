@@ -3,7 +3,7 @@ import './homepage.css';
 
 function App() {
   return (
-    <div className="App" style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+    <div className="App" style={{ backgroundColor: 'orange', minHeight: '100vh' }}>
       <header className="App-header">
         <h1>Welcome to HomePage</h1>
       </header>

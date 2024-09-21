@@ -11,7 +11,8 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/' element={<Homepage/>}/>
-          <Route path='*' element={<MainAdminContent/>}/>
+          <Route path='/admin/*' element={<MainAdminContent/>}/>
+          <Route path='*' element={<Homepage/>}/>
         </Routes>
       </Router>
     </React.StrictMode>
@@ -23,7 +24,8 @@ const MainAdminContent = () => {
     <div className="App">
       <div className="admin-content">
         <Routes>
-          <Route path="/livemanagement" element={<LiveManagement />} />
+          <Route exact path='/' element={<Homepage/>}/>
+          <Route path="livemanagement" element={<LiveManagement />} />
         </Routes>
       </div>
     </div>
