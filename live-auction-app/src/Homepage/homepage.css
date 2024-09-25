@@ -7,7 +7,7 @@ h1 {
   font-weight: 300;
   height: 300px;
   font-size: 2.5rem;
-  color: #38371b;
+  color: #67652f;
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 20px;
@@ -31,7 +31,7 @@ h1 {
 }
 
 .App {
-  background: linear-gradient(-45deg, #696f2f, #433f14, #949435, #716610);
+  background: linear-gradient(-45deg, #696f2f, #222009, #949435, #716610);
   background-size: 400% 400%;
   animation: gradientAnimation 20s ease infinite;
   min-height: 100vh;
@@ -51,25 +51,51 @@ nav ul {
 }
 
 nav ul li {
-  display: inline;
-  margin-left: 15px;
+  margin-right: 100px;
 }
 
-nav ul li a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  border-radius: 40;
+nav ul li:last-child {
+  margin-right: 0;
 }
-nav ul li a {
+
+
+nav ul li a[data-tooltip] {
+  position: relative;
+}
+
+nav ul li a[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+nav ul li a[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+a{
   color: white;
   text-decoration: none;
-  padding: 5px 50px;  /* Increased padding */
-  background-color: rgba(18, 59, 7, 0.2);
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
-  display: inline-block;  /* This ensures the padding is applied correctly */
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
   font-weight: bold;
+  font-family:monospace;
 }
+
 
 nav ul li {
   display: inline-block;
@@ -166,7 +192,7 @@ nav ul li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(92, 108, 18);
+  background-color: rgb(53, 61, 15);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -180,7 +206,7 @@ nav ul li {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #55790f;
+  border: 1px solid rgb(53, 61, 15);
   border-radius: 20px;
 }
 
@@ -215,7 +241,7 @@ h2{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(92, 108, 18);
+  background-color: rgb(53, 61 , 15);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
