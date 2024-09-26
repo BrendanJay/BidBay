@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './Homepage/homepage';
 import LiveManagement from './AdminComponents/LiveManagement/LiveAdmin';
+import BidderPage from './Bidderpage/BidderRegistration/bidderregistration';
+import LoginPage from './LogIn/login';
+import SellerRegistrationPage from './Sellerpage/SellerRegistration/sellerregistration';
+import SellerRegistrationPage2 from './Sellerpage/SellerRegistration/sellerregistration2';
 import './App.css';
 
 function App() {
@@ -13,6 +17,10 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Homepage/>}/>
           <Route path='/admin/*' element={<MainAdminContent/>}/>
+          <Route path='./bidderlogin' element={<BidderPage/>}/>
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/sellerregistration' element={<SellerRegistrationPage/>}/>
+          <Route path='/sellerregistration2' element={<SellerRegistrationPage2/>}/>
           <Route path='*' element={<Homepage/>}/>
         </Routes>
       </Router>
