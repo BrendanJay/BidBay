@@ -8,6 +8,8 @@ import BidderPage from './Bidderpage/BidderRegistration/bidderregistration';
 import LoginPage from './LogIn/login';
 import SellerRegistrationPage from './Sellerpage/SellerRegistration/sellerregistration';
 import SellerRegistrationPage2 from './Sellerpage/SellerRegistration/sellerregistration2';
+import BidderRegistrationPage from './Bidderpage/BidderRegistration/bidderregistration';
+import BidderRegistrationPage2 from './Bidderpage/BidderRegistration/bidderregistration2';
 import './App.css';
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/sellerregistration' element={<SellerRegistrationPage/>}/>
           <Route path='/sellerregistration2' element={<SellerRegistrationPage2/>}/>
+          <Route path='/bidderregistration' element={<BidderRegistrationPage/>}/>
+          <Route path='/bidderregistration2' element={<BidderRegistrationPage2/>}/>
           <Route path='*' element={<Homepage/>}/>
         </Routes>
       </Router>

@@ -36,8 +36,12 @@ function SellerLoginPage() {
     }
   };
 
-  const onRegister = () => {
+  const onSellerRegister = () => {
     navigate('/sellerregistration'); // Navigate to seller registration
+  };
+
+  const onBidderRegister = () => {
+    navigate('/bidderregistration'); // Navigate to bidder registration
   };
 
   const onClose = () => {
@@ -84,7 +88,7 @@ function SellerLoginPage() {
                 onChange={(e) => setPassword(e.target.value)} // Capture password input
               />
               <button onClick={handleLogin}>Login</button>
-              <button onClick={onRegister}>Register as Seller</button>
+              <button onClick={onSellerRegister}>Register as Seller</button>
               <button>
                 <i className="fab fa-facebook-f"></i> Login with Facebook
               </button>
@@ -106,6 +110,7 @@ function SellerLoginPage() {
                 onChange={(e) => setPassword(e.target.value)} // Capture password input
               />
               <button onClick={handleLogin}>Login</button>
+              <button onClick={onBidderRegister}>Register as Bidder</button>
               <button onClick={onClose}>Close</button>
             </div>
           )}
