@@ -117,6 +117,9 @@ function SellerLoginPage() {
               />
               <button onClick={handleLogin}>Login</button>
               <button onClick={onBidderRegister}>Register as Bidder</button>
+              <button>
+                <i className="fab fa-facebook-f"></i> Login with Facebook
+              </button>
               <button onClick={onClose}>Close</button>
             </div>
           )}
