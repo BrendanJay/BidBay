@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import './bidderregistration.css'; // Create this CSS file similarly
+import './bidderregistration.css';
 
 const BidderRegistrationPage = () => {
   const [username, setUsername] = useState('');

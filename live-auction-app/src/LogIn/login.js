@@ -3,55 +3,85 @@ import './login.css';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase'; 
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithFacebook } from '../firebase';
 
-function SellerLoginPage() {
+function LoginPage() {
   const [isBidderLogin, setIsBidderLogin] = useState(false);
-  const [email, setEmail] = useState(''); // State for email
-  const [password, setPassword] = useState(''); // State for password
-  const [error, setError] = useState(''); // State for error messages
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Toggle the state to show either Seller or Bidder form
+  // Toggle between Seller and Bidder login forms
   const toggleLogin = () => {
     setIsBidderLogin(!isBidderLogin);
   };
 
+  // Handle Manual Login
   const handleLogin = async () => {
     setError(''); // Clear any previous error messages
 
     try {
       if (isBidderLogin) {
-        // Handle bidder login logic here
+        // Implement bidder login logic if necessary
         console.log('Bidder login logic');
-        // Implement bidder login if necessary
+        // For now, redirect to bidder homepage
+        navigate('/bidderhomepage');
       } else {
-        // Handle seller login logic
+        // Seller login logic
         await signInWithEmailAndPassword(auth, email, password);
         console.log('Seller logged in successfully');
-        navigate('/sellerdashboard'); // Redirect to the seller dashboard or another page
+        navigate('/sellerhomepage'); // Redirect to Seller Home Page
       }
     } catch (error) {
       console.error('Error during login:', error);
-      setError(error.message); // Set error message if login fails
+      setError(error.message); // Display error message
     }
   };
 
+  // Navigate to Seller Registration
   const onSellerRegister = () => {
-    navigate('/sellerregistration'); // Navigate to seller registration
+    navigate('/sellerregistration');
   };
 
+  // Navigate to Bidder Registration
   const onBidderRegister = () => {
-    navigate('/bidderregistration'); // Navigate to bidder registration
+    navigate('/bidderregistration');
   };
 
+  // Handle Facebook Login for Seller
+  const handleFacebookLoginseller = async () => {
+    try {
+      await signInWithFacebook(); // Assuming this function returns a promise
+      console.log('Facebook login successful for Seller');
+      navigate('/sellerhomepage'); // Redirect to Seller Home Page
+    } catch (error) {
+      console.error('Error during Facebook login:', error);
+      setError(error.message);
+    }
+  };
+
+  // Handle Facebook Login for Bidder
+  const handleFacebookLoginbidder = async () => {
+    try {
+      await signInWithFacebook(); // Assuming this function returns a promise
+      console.log('Facebook login successful for Bidder');
+      navigate('/bidderhomepage'); // Redirect to Bidder Home Page
+    } catch (error) {
+      console.error('Error during Facebook login:', error);
+      setError(error.message);
+    }
+  };
+
+  // Close the login page
   const onClose = () => {
-    navigate(-1); // Close the login page
+    navigate(-1);
   };
 
   return (
     <div className="App">
       <div className="login-container">
-        {/* Error Message */}
+        {/* Display Error Message */}
         {error && <p className="error-message">{error}</p>}
         
         {/* Toggle Panel */}
@@ -89,7 +119,7 @@ function SellerLoginPage() {
               />
               <button onClick={handleLogin}>Login</button>
               <button onClick={onSellerRegister}>Register as Seller</button>
-              <button>
+              <button onClick={handleFacebookLoginseller}>
                 <i className="fab fa-facebook-f"></i> Login with Facebook
               </button>
               <button onClick={onClose}>Close</button>
@@ -111,6 +141,9 @@ function SellerLoginPage() {
               />
               <button onClick={handleLogin}>Login</button>
               <button onClick={onBidderRegister}>Register as Bidder</button>
+              <button onClick={handleFacebookLoginbidder}>
+                <i className="fab fa-facebook-f"></i> Login with Facebook
+              </button>
               <button onClick={onClose}>Close</button>
             </div>
           )}
@@ -120,4 +153,4 @@ function SellerLoginPage() {
   );
 }
 
-export default SellerLoginPage;
+export default LoginPage;

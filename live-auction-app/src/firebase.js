@@ -2,8 +2,9 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from "firebase/auth"; // Import Firebase Authentication
+import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { getStorage } from 'firebase/storage';
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,6 +16,8 @@ const firebaseConfig = {
     appId: "1:992672602033:web:8f4445a8d512db09b18f90",
     measurementId: "G-59EN630QV7"
 };
+
+const fbAuthProvider = new FacebookAuthProvider();
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -29,3 +32,14 @@ const storage = getStorage(app);
 
 // Export Firestore and Auth for use in other files
 export { auth, firestore, storage };  
+
+export const signInWithFacebook = async () => {
+    try {
+        const auth = getAuth();
+        const result = await signInWithPopup(auth, fbAuthProvider);
+        console.log("User info: ", result.user);
+        return result.user;
+    } catch (error) {
+        console.error("Error during Facebook login:", error);
+    }
+};
