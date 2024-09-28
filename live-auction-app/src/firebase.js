@@ -5,6 +5,8 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from "firebase/auth"; // Import Firebase Authentication
 import { getStorage } from 'firebase/storage';
 
+
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyD9QrGNwA8paE0ZpfiR_dn9Sv21DysmoXA",

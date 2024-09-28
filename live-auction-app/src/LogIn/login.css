@@ -45,12 +45,12 @@
   cursor: pointer;
   border: none;
   color: white;
-  background-color: #4d324d; /* Match background color */
+  background-color: #324d33; /* Match background color */
   transition: background-color 0.3s;
 }
 
 .toggle-button:hover {
-  background-color: #301330;; /* Lighter purple on hover */
+  background-color: #042c0d;; /* Lighter purple on hover */
 }
 
 .toggle-button.active {

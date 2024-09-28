@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase'; 
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
+
+
 function SellerLoginPage() {
   const [isBidderLogin, setIsBidderLogin] = useState(false);
   const [email, setEmail] = useState(''); // State for email
@@ -15,6 +17,10 @@ function SellerLoginPage() {
   const toggleLogin = () => {
     setIsBidderLogin(!isBidderLogin);
   };
+   
+  
+
+
 
   const handleLogin = async () => {
     setError(''); // Clear any previous error messages
