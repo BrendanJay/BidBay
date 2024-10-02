@@ -1,0 +1,153 @@
+/* General Layout */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .bidding-page {
+    padding: 20px;
+  }
+  
+  .header {
+    background-color: #8B0000;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header nav a {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .main-section {
+    margin-top: 20px;
+  }
+  
+  .auction-info {
+    margin-bottom: 20px;
+  }
+  
+  .auction-dates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .status-button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .banner-image {
+    margin-top: 10px;
+  }
+  
+  .banner-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+  
+  .bid-form {
+    background-color: #F5F5F5;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .bid-form h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Flex Layout for Bidder Info */
+  .bidder-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .bidder-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .bidder-row label {
+    width: 150px;
+  }
+  
+  .bidder-row input {
+    flex-grow: 1;
+    padding: 5px;
+    margin-right: 20px;
+  }
+  
+  .bidder-row input:last-of-type {
+    margin-right: 0;
+  }
+  
+  .auction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .auction-table th, .auction-table td {
+    border: 1px solid #8B0000;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .auction-table th {
+    background-color: #8B0000;
+    color: white;
+  }
+  
+  /* Centering the Options button */
+.options-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the button */
+    margin-top: 20px;
+  }
+  
+  /* The existing options-button styles */
+  .options-button {
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* For responsive alignment */
+  .bidder-info input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .bid-form {
+      display: block;
+    }
+  
+    .bidder-info {
+      flex-wrap: nowrap;
+    }
+  
+    .bidder-row {
+      justify-content: space-between;
+    }
+  }
