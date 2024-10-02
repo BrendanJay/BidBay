@@ -66,25 +66,80 @@ nav ul li a[data-tooltip] {
 nav ul li a[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(66, 101, 18, 0.833);
   color: white;
-  padding: 10px;
-  border-radius: 5px;
-  width: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
   text-align: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   z-index: 1000;
   white-space: nowrap;
+  font-size: 1.1em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul li a[data-tooltip]:hover::after {
   opacity: 1;
+  transform: translateX(-50%) scale(1.1);
 }
+
+nav ul li a[data-tooltip]::after {
+  content: attr(data-tooltip);
+  width: 300px;
+  white-space: normal;
+  line-height: 1.4;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+nav ul li a[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+nav ul li a[data-tooltip="Home"] {
+  transition: all 0.3s ease;
+}
+
+nav ul li a[data-tooltip="Home"]:hover {
+  transform: scale(1.2);
+  padding: 15px 20px;
+  background-color: #282b11;
+  border-radius: 20px;
+}
+
+nav ul li a[data-tooltip="About"] {
+  transition: all 0.3s ease;
+}
+
+nav ul li a[data-tooltip="About"]:hover {
+  transform: scale(1.2);
+  padding: 15px 20px;
+  background-color: #282b11;
+  border-radius: 20px;
+}
+
+nav ul li a[data-tooltip="Contact"] {
+  transition: all 0.3s ease;
+}
+
+nav ul li a[data-tooltip="Contact"]:hover {
+  transform: scale(1.2);
+  padding: 15px 20px;
+  background-color: #282b11;
+  border-radius: 20px;
+}
+
+
+
+
+
+
 
 a{
   color: white;
