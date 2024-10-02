@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/BrendanJay/BidBaynpm/static/css/main.be317040.css",
+    "main.js": "/BrendanJay/BidBaynpm/static/js/main.04fb271f.js",
+    "static/js/453.0d4cc6f9.chunk.js": "/BrendanJay/BidBaynpm/static/js/453.0d4cc6f9.chunk.js",
+    "static/media/logo.svg": "/BrendanJay/BidBaynpm/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/BrendanJay/BidBaynpm/index.html",
+    "main.be317040.css.map": "/BrendanJay/BidBaynpm/static/css/main.be317040.css.map",
+    "main.04fb271f.js.map": "/BrendanJay/BidBaynpm/static/js/main.04fb271f.js.map",
+    "453.0d4cc6f9.chunk.js.map": "/BrendanJay/BidBaynpm/static/js/453.0d4cc6f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be317040.css",
+    "static/js/main.04fb271f.js"
+  ]
+}
