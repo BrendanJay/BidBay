@@ -42,7 +42,7 @@ const SellerRegistrationPage = () => {
       <div className="registration-page">
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleRegistration}>
-          <h2>Register your Account</h2>
+          <h2>Register as Seller</h2>
           <input
             type="text"
             placeholder="Username"

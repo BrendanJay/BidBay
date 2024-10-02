@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { auth, firestore } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithFacebook } from '../../firebase';
 import './sellerregistration.css';
 
 const SellerRegistrationPage2 = () => {
