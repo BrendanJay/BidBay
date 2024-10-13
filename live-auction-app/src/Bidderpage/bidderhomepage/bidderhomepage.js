@@ -57,7 +57,7 @@ function BidderHomePage() {
 
         <div className="main-content">
           <header>
-            <h2>Bidder Dashboard</h2>
+            <h2>Welcome back Bidder!</h2>
           </header>
 
           <div className="dashboard-content">
