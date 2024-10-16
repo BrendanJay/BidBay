@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword, fetchSignInMethodsForEmail } from 'firebase
 import { signInWithFacebook } from '../firebase';
 import { firestore } from '../firebase';
 import { setDoc, getDoc, doc } from 'firebase/firestore';
+import { FaFacebook } from "react-icons/fa6";
 
 function LoginPage() {
   const [isBidderLogin, setIsBidderLogin] = useState(false);
@@ -153,8 +154,9 @@ return (
             <button onClick={handleLogin}>Login</button>
             <button onClick={onSellerRegister}>Register as Seller</button>
             <button onClick={handleFacebookLoginseller}>
-              <i className="fab fa-facebook-f"></i> Login with Facebook
-            </button>
+  <FaFacebook /> Login with Facebook
+</button>
+
             <button onClick={onClose}>Close</button>
           </div>
         ) : (
@@ -174,9 +176,10 @@ return (
             />
             <button onClick={handleLogin}>Login</button>
             <button onClick={onBidderRegister}>Register as Bidder</button>
-            <button onClick={handleFacebookLoginbidder}>
-              <i className="fab fa-facebook-f"></i> Login with Facebook
-            </button>
+            <button className="facebook-login-btn" onClick={handleFacebookLoginseller}>
+  <FaFacebook /> Login with Facebook
+</button>
+
             <button onClick={onClose}>Close</button>
           </div>
         )}
